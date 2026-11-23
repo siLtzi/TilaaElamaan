@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 
-const challenges = ["Tavaraa on liikaa", "Kaapeissa ei ole toimivaa järjestystä", "Aloittaminen tuntuu vaikealta", "Jokin muu"];
+const challenges = ["Tavaraa kertyy liikaa", "Tavaroille on vaikea löytää paikkoja", "En saa aloitettua järjestämistä", "Muu asia"];
 
 export function ContactForm({ email }: { email?: string }) {
   const [status, setStatus] = useState("");
@@ -27,10 +27,10 @@ export function ContactForm({ email }: { email?: string }) {
     try {
       await navigator.clipboard.writeText(message);
       setDraft("");
-      setStatus("Viesti kopioitu leikepöydälle.");
+      setStatus("Viesti kopioitu. Voit liittää sen sähköpostiin.");
     } catch {
       setDraft(message);
-      setStatus("Voit kopioida viestin alla olevasta kentästä.");
+      setStatus("Kopioi viesti alla olevasta kentästä.");
     }
   }
 
@@ -40,19 +40,19 @@ export function ContactForm({ email }: { email?: string }) {
         <label>Nimi<input name="name" autoComplete="name" maxLength={100} required /></label>
         <label>Sähköposti<input type="email" name="email" autoComplete="email" maxLength={254} required /></label>
       </div>
-      <label>Mikä on suurin haasteesi?
+      <label>Missä kaipaisit eniten apua?
         <select name="challenge" defaultValue="">
-          <option value="">Valitse sinulle sopivin</option>
+          <option value="">Valitse, jos haluat</option>
           {challenges.map((challenge) => <option key={challenge}>{challenge}</option>)}
         </select>
       </label>
-      <label>Kerro tilanteestasi
+      <label>Kerro vähän tilanteestasi
         <textarea name="message" rows={4} maxLength={2000} required />
       </label>
       <button className="button button-primary" type="submit">
-        {email ? "Avaa sähköpostissa" : "Kopioi viesti"} <span aria-hidden="true">↗</span>
+        {email ? "Jatka sähköpostiin" : "Kopioi viesti"} <span aria-hidden="true">↗</span>
       </button>
-      {!email && <p className="form-note">Esikatselu. Voit kokeilla lomaketta ja kopioida viestin itsellesi.</p>}
+      {!email && <p className="form-note">Viesti ei lähde automaattisesti. Voit kopioida tekstin ja lähettää sen itse.</p>}
       {status && <p className="form-note" role="status">{status}</p>}
       {draft && <textarea aria-label="Kopioitava viesti" readOnly value={draft} rows={5} />}
     </form>

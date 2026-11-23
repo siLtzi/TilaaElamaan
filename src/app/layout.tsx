@@ -29,7 +29,7 @@ const handwriting = Indie_Flower({
 
 export const metadata: Metadata = {
   title: "Tilaa elämään | Ammattijärjestäjä kotiin",
-  description: "Käytännön apua kodin järjestämiseen koulutetulta ammattijärjestäjältä. Vähemmän tavaraa, enemmän tilaa elämälle.",
+  description: "Koulutettu ammattijärjestäjä auttaa, kun tavarat eivät löydä paikkaansa tai järjestäminen tuntuu vaikealta. Aloitetaan vaikka yhdestä kaapista.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
