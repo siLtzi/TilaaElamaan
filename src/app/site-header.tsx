@@ -38,7 +38,7 @@ export function SiteHeader() {
     page.forEach((element) => element?.toggleAttribute("inert", open));
     if (!open) return;
 
-    menuRef.current?.querySelector<HTMLElement>("a")?.focus();
+    menuRef.current?.querySelector<HTMLElement>("a")?.focus({ preventScroll: true });
     const onKey = (event: KeyboardEvent) => {
       if (event.key !== "Escape") return;
       setOpen(false);
