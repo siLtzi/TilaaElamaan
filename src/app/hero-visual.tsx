@@ -6,10 +6,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 
 const prints = [
-  { file: "pola1.jpg", alt: "Säilytyskoreja ja leluja lastenhuoneessa", caption: "Lelut koreihin" },
-  { file: "pola2.jpg", alt: "Kuiva-aineita lasipurkeissa keittiön tasolla", caption: "Kuiva-aineet järjestykseen" },
-  { file: "pola3.jpg", alt: "Valkoisia pyyhkeitä korissa", caption: "Pyyhkeet paikoilleen" },
-  { file: "pola4.jpg", alt: "Vaatteita ja kenkiä järjestetyssä vaatehuoneessa", caption: "Vaatteet löytyvät helpommin" },
+  { file: "pola1.jpg", alt: "Säilytyskoreja ja leluja lastenhuoneessa", caption: "Leikit talteen" },
+  { file: "pola2.jpg", alt: "Kuiva-aineita lasipurkeissa keittiön tasolla", caption: "Kaikki löytyy" },
+  { file: "pola3.jpg", alt: "Valkoisia pyyhkeitä korissa", caption: "Pyykit paikoilleen" },
+  { file: "pola4.jpg", alt: "Vaatteita ja kenkiä järjestetyssä vaatehuoneessa", caption: "Tilaa vaatteille" },
 ];
 
 // Matches the CSS start state so the photos "develop" like instant film.
