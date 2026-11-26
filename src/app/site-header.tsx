@@ -4,7 +4,7 @@ import Image from "next/image";
 import { type CSSProperties, useEffect, useRef, useState } from "react";
 
 const links = [
-  { href: "#palvelut", label: "Palvelut" },
+  { href: "#ajatus", label: "Ajatus" },
   { href: "#minusta", label: "Minusta" },
   { href: "#usein-kysyttya", label: "Kysyttyä" },
 ];
@@ -66,7 +66,7 @@ export function SiteHeader() {
     >
       <div className="wrap header-inner">
         <a className="brand" href="#alku" aria-label="Tilaa elämään – alkuun" onClick={() => setOpen(false)}>
-          <Image className="brand-logo" src="/images/TE.svg" alt="Tilaa elämään" width={2172} height={724} preload />
+          <Image className="brand-logo" src="/images/TElogo2.svg" alt="Tilaa elämään" width={1217} height={269} preload />
         </a>
 
         <nav className="desktop-nav" aria-label="Päävalikko">
@@ -75,9 +75,12 @@ export function SiteHeader() {
               {label}
             </a>
           ))}
+          <a className="nav-prices" href="#hinnasto">
+            Palvelut &amp; hinnasto
+          </a>
           <a className="nav-contact" href="#yhteys">
             <span>Ota yhteyttä</span>
-            <span className="nav-contact-arrow" aria-hidden="true">↗</span>
+            <span className="nav-contact-arrow" aria-hidden="true">→</span>
           </a>
         </nav>
 
@@ -98,7 +101,7 @@ export function SiteHeader() {
       <div className="mobile-menu" id="mobile-menu" ref={menuRef} data-lenis-prevent inert={!open}>
         <nav className="wrap mobile-menu-inner" aria-label="Mobiilivalikko">
           <ul>
-            {[...links, { href: "#yhteys", label: "Ota yhteyttä" }].map(({ href, label }, index) => (
+            {[{ href: "#hinnasto", label: "Hinnasto" }, ...links, { href: "#yhteys", label: "Ota yhteyttä" }].map(({ href, label }, index) => (
               <li key={href} style={{ "--i": index } as CSSProperties}>
                 <a href={href} onClick={() => setOpen(false)}>
                   <span>{label}</span>
@@ -106,7 +109,7 @@ export function SiteHeader() {
               </li>
             ))}
           </ul>
-          <p className="mobile-menu-tagline">Ei tarvitse pärjätä<br /><em>yksin.</em></p>
+          <p className="mobile-menu-tagline">Tilaa sinne,<br />missä elämä tapahtuu.</p>
         </nav>
       </div>
     </header>

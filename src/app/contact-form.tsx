@@ -49,8 +49,9 @@ export function ContactForm({ email }: { email?: string }) {
       <label>Kerro vähän tilanteestasi
         <textarea name="message" rows={4} maxLength={2000} required />
       </label>
-      <button className="button button-primary" type="submit">
-        {email ? "Jatka sähköpostiin" : "Kopioi viesti"} <span aria-hidden="true">↗</span>
+      <button className="button" type="submit">
+        <span>{email ? "Jatka sähköpostiin" : "Kopioi viesti"}</span>
+        <span className="button-icon" aria-hidden="true">→</span>
       </button>
       {!email && <p className="form-note">Viesti ei lähde automaattisesti. Voit kopioida tekstin ja lähettää sen itse.</p>}
       {status && <p className="form-note" role="status">{status}</p>}
